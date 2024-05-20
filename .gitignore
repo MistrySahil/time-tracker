@@ -1,0 +1,10 @@
+#package file
+package-lock.json
+
+#swagger-output
+swagger-output.json
+
+# Dependency directories
+node_modules/
+
+.env
