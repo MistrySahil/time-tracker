@@ -8,3 +8,5 @@ swagger-output.json
 node_modules/
 
 .env
+
+.prettierrc
