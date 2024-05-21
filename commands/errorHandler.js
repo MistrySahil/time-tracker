@@ -36,8 +36,7 @@ function errorHandler(error, req, res, next) {
     default:
       return res.error(
         {
-          message:
-          DatabaseErrorMessages.SOMETHING_WENT_WRONG,
+          message: DatabaseErrorMessages.SOMETHING_WENT_WRONG,
           error_code: error.errorCode || 'UNKNOWN_EXCEPTION_OCCURED',
           data: {
             ...error.data,

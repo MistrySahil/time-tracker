@@ -3,9 +3,7 @@ const { ClientException } = require('./exceptions/ClientException')
 const { UserErrors } = require('../constants/ErrorCodes')
 const { UserMessagesErrors } = require('../constants/ErrorMessages')
 
-const generateJWTToken = async (
-  extraData,
-) => {
+const generateJWTToken = async (extraData) => {
   const token = jwt.sign({ ...extraData }, process.env.JWT_SECRET, {})
   return token
 }

@@ -6,8 +6,8 @@ const { generateJWTToken } = require('../commands/commandHandler')
 const { sequelize } = require('../commands/dbConnection')
 const { UserSuccess } = require('../constants/SuccessCodes')
 const { UserSuccessMessages } = require('../constants/SuccessMessages')
-const DataTypes = sequelize.DataTypes;
-const User = require('../models/user')(sequelize, DataTypes);
+const DataTypes = sequelize.DataTypes
+const User = require('../models/user')(sequelize, DataTypes)
 
 const signUp = async (req, res) => {
   const { name, username, password } = req.body

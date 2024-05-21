@@ -3,8 +3,8 @@ const { sequelize } = require('../commands/dbConnection')
 const { ClientException } = require('../commands/exceptions/ClientException')
 const { UserErrors } = require('../constants/ErrorCodes')
 const { UserErrorMessages } = require('../constants/ErrorMessages')
-const DataTypes = sequelize.DataTypes;
-const User = require('../models/user')(sequelize, DataTypes);
+const DataTypes = sequelize.DataTypes
+const User = require('../models/user')(sequelize, DataTypes)
 
 /**
  * @param  {Request} req

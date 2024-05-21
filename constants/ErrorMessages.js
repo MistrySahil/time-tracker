@@ -21,12 +21,12 @@ const TaskErrorMessages = {
 }
 
 const DatabaseErrorMessages = {
-		ENTITY_NOT_FOUND: 'No record found for the specified entity.',
-		DUPLICATE_ENTRY: 'Duplicate entry; the data already exists.',
-		UNKOWN_ERROR: 'An unknown error occurred.',
-		TRANSACTION_FAILED: 'The transaction failed to complete successfully.',
-		SOMETHING_WENT_WRONG: 'Something went wrong during the process.',
-		SERVER_SIDE_ERROR: 'There is an error on the server side.',
+  ENTITY_NOT_FOUND: 'No record found for the specified entity.',
+  DUPLICATE_ENTRY: 'Duplicate entry; the data already exists.',
+  UNKOWN_ERROR: 'An unknown error occurred.',
+  TRANSACTION_FAILED: 'The transaction failed to complete successfully.',
+  SOMETHING_WENT_WRONG: 'Something went wrong during the process.',
+  SERVER_SIDE_ERROR: 'There is an error on the server side.',
 }
 module.exports = {
   GeneralErrorsMessages,

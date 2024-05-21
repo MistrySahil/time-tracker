@@ -4,7 +4,7 @@ const { TaskErrors } = require('../constants/ErrorCodes')
 const { TaskErrorMessages } = require('../constants/ErrorMessages')
 const { TaskSuccess } = require('../constants/SuccessCodes')
 const { TaskSuccessMessage } = require('../constants/SuccessMessages')
-const DataTypes = sequelize.DataTypes;
+const DataTypes = sequelize.DataTypes
 const Task = require('../models/task')(sequelize, DataTypes)
 
 const getTrackedTasks = async (req, res) => {

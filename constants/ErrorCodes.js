@@ -19,12 +19,12 @@ const UserErrors = {
 }
 
 const DatabaseErrors = {
-  TRANSACTION_FAILED: 'TRANSACTION_FAILED'
+  TRANSACTION_FAILED: 'TRANSACTION_FAILED',
 }
 
 module.exports = {
   TaskErrors,
   GeneralErrors,
   UserErrors,
-  DatabaseErrors
+  DatabaseErrors,
 }

@@ -29,8 +29,8 @@ router.post(
                 "description": "provide JWT token"
             }
         }]
-    #swagger.parameters['body'] = {
-      in: 'body',
+    #swagger.requestBody = {
+      in: 'requestBody',
       description: 'Task information',
       required: true,
       schema: { $ref: '#/definitions/createTask' }
@@ -67,8 +67,8 @@ router.post(
                 "description": "provide JWT token"
             }
         }]
-    #swagger.parameters['body'] = {
-      in: 'body',
+    #swagger.requestBody = {
+      in: 'requestBody',
       description: 'Task information',
       required: true,
       schema: { $ref: '#/definitions/endTask' }
@@ -105,8 +105,8 @@ router.delete(
                 "description": "provide JWT token"
             }
         }]
-    #swagger.parameters['query'] = {
-      in: 'query',
+    #swagger.requestBody = {
+      in: 'requestBody',
       description: 'Task id',
       required: true,
       schema: { $ref: '#/definitions/deleteTask' }

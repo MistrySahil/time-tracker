@@ -16,7 +16,7 @@ function bodyValidatorMiddleware(schema, schemaName) {
     req.__rawBody = { ...req.body, ...req.query, ...req.params }
     req.body = value
     req.__rawBody = { ...req.body, ...req.query, ...req.params }
-    console.log('body', req.body);
+    console.log('body', req.body)
     if (!error) {
       return next()
     }
