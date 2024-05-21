@@ -5,11 +5,8 @@ const { UserMessagesErrors } = require('../constants/ErrorMessages')
 
 const generateJWTToken = async (
   extraData,
-  expiresIn = process.env.JWT_EXPIRES_IN,
 ) => {
-  const token = jwt.sign({ ...extraData }, process.env.JWT_SECRET, {
-    expiresIn: expiresIn,
-  })
+  const token = jwt.sign({ ...extraData }, process.env.JWT_SECRET, {})
   return token
 }
 

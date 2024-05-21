@@ -9,17 +9,6 @@ const { GeneralErrorsMessages } = require('../constants/ErrorMessages')
 function bodyValidatorMiddleware(schema, schemaName) {
   return (req, res, next) => {
     let requestpayload = { ...req.body, ...req.query, ...req.params }
-    if (schemaName) {
-      switch (schemaName) {
-        case 'IMPORT':
-          requestpayload = req.vehicleJson
-          break
-        case 'CAMPAIGN':
-          requestpayload['VINs'] = req.VINJson
-        default:
-          break
-      }
-    }
     const { error, value } = schema.validate(requestpayload, {
       abortEarly: false,
       convert: true,
@@ -27,6 +16,7 @@ function bodyValidatorMiddleware(schema, schemaName) {
     req.__rawBody = { ...req.body, ...req.query, ...req.params }
     req.body = value
     req.__rawBody = { ...req.body, ...req.query, ...req.params }
+    console.log('body', req.body);
     if (!error) {
       return next()
     }
@@ -48,7 +38,7 @@ function bodyValidatorMiddleware(schema, schemaName) {
       return words.join('')
     })
     return res.status(400).json({
-      message: GeneralErrorsMessages[req.headers.lang].INVALID_REQUEST_BODY,
+      message: GeneralErrorsMessages.INVALID_REQUEST_BODY,
       error_code: GeneralErrors.INVALID_REQUEST_BODY,
       error: messages,
       data: {},

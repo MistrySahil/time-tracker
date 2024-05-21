@@ -1,9 +1,11 @@
+const { sequelize } = require('../commands/dbConnection')
 const { ClientException } = require('../commands/exceptions/ClientException')
 const { TaskErrors } = require('../constants/ErrorCodes')
 const { TaskErrorMessages } = require('../constants/ErrorMessages')
 const { TaskSuccess } = require('../constants/SuccessCodes')
 const { TaskSuccessMessage } = require('../constants/SuccessMessages')
-const Task = require('../models/task')
+const DataTypes = sequelize.DataTypes;
+const Task = require('../models/task')(sequelize, DataTypes)
 
 const getTrackedTasks = async (req, res) => {
   const { limit = 10, offset = 0 } = req.query

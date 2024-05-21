@@ -17,3 +17,14 @@ const UserErrors = {
   USER_ALREADY_EXIST: 'USER_ALREADY_EXIST',
   INVALID_TOKEN: 'INVALID_TOKEN',
 }
+
+const DatabaseErrors = {
+  TRANSACTION_FAILED: 'TRANSACTION_FAILED'
+}
+
+module.exports = {
+  TaskErrors,
+  GeneralErrors,
+  UserErrors,
+  DatabaseErrors
+}

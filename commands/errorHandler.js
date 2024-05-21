@@ -1,4 +1,4 @@
-const { DatabaseErrorsMessages } = require('../constants/ErrorMessages')
+const { DatabaseErrorMessages } = require('../constants/ErrorMessages')
 
 /**
  * @param  {} error
@@ -12,7 +12,7 @@ function errorHandler(error, req, res, next) {
     case 'SERVER_SIDE_ERROR_EXCEPTION':
       return res.error(
         {
-          message: DatabaseErrorsMessages[req.headers.lang].SERVER_SIDE_ERROR,
+          message: DatabaseErrorMessages.SERVER_SIDE_ERROR,
           error_code: error.errorCode,
           data: {
             ...error.data,
@@ -24,7 +24,7 @@ function errorHandler(error, req, res, next) {
     case 'CLIENT_SIDE_ERROR_EXCEPTION':
       return res.error(
         {
-          message: DatabaseErrorsMessages[req.headers.lang].SERVER_SIDE_ERROR,
+          message: DatabaseErrorMessages.SERVER_SIDE_ERROR,
           error_code: error.errorCode,
           data: {
             ...error.data,
@@ -37,7 +37,7 @@ function errorHandler(error, req, res, next) {
       return res.error(
         {
           message:
-            DatabaseErrorsMessages[req.headers.lang].SOMETHING_WENT_WRONG,
+          DatabaseErrorMessages.SOMETHING_WENT_WRONG,
           error_code: error.errorCode || 'UNKNOWN_EXCEPTION_OCCURED',
           data: {
             ...error.data,

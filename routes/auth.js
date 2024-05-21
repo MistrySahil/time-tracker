@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const { bodyValidatorMiddleware } = require('../middlewares/bodyValidator')
 const { asyncRouteHandler } = require('../commands/asyncHandler')
-const { authMiddleware } = require('../middlewares/authMiddleware')
 const { signUp, login } = require('../controllers/authController')
 const { SignUp, Login } = require('../validators/authValidator')
 
@@ -38,15 +37,6 @@ router.post(
   /*
         #swagger.tags = ['User']
         #swagger.description = 'Endpoint to login user'
-        #swagger.security = [{
-            "bearerAuth": {
-                "type": "apiKey",
-                "in": "header",
-                "name": "Authorization",
-                "bearerFormat": "JWT",
-                "description": "provide JWT token"
-            }
-        }]
         #swagger.parameters['body'] = {
             in: 'body',
             description: 'User information.',
@@ -67,7 +57,6 @@ router.post(
         }
     */
   bodyValidatorMiddleware(Login),
-  authMiddleware(),
   asyncRouteHandler(login),
 )
 

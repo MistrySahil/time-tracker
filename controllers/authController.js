@@ -3,7 +3,11 @@ const { UserErrors } = require('../constants/ErrorCodes')
 const { UserMessagesErrors } = require('../constants/ErrorMessages')
 const { ClientException } = require('../commands/exceptions/ClientException')
 const { generateJWTToken } = require('../commands/commandHandler')
-const User = require('../models/user')
+const { sequelize } = require('../commands/dbConnection')
+const { UserSuccess } = require('../constants/SuccessCodes')
+const { UserSuccessMessages } = require('../constants/SuccessMessages')
+const DataTypes = sequelize.DataTypes;
+const User = require('../models/user')(sequelize, DataTypes);
 
 const signUp = async (req, res) => {
   const { name, username, password } = req.body

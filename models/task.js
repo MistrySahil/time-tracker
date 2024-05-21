@@ -1,13 +1,23 @@
-'use strict'
-module.exports = (sequelize, DataTypes) => {
+const { DataTypes } = require('sequelize')
+
+module.exports = (sequelize) => {
   const Task = sequelize.define(
     'Task',
     {
-      task_name: DataTypes.STRING,
-      start_time: DataTypes.DATE,
-      end_time: DataTypes.DATE,
-      is_running: DataTypes.BOOLEAN,
-      userId: DataTypes.INTEGER,
+      task_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      start_time: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      end_time: {
+        type: DataTypes.DATE,
+      },
+      userId: {
+        type: DataTypes.INTEGER
+      },
     },
     {},
   )
